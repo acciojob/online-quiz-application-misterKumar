@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class QuizQuestion {
-	 private String question;
+		private String question;
 	    private ArrayList<String> options;
 	    private char correctOption;
 
@@ -32,7 +32,9 @@ public class QuizQuestion {
 	    @Override
 	    public boolean equals(Object o) {
 	       // your code goes here
-	    	 QuizQuestion that = (QuizQuestion) o;
+			if (this == o) return true;
+			if (o == null || getClass() != o.getClass()) return false;
+			QuizQuestion that = (QuizQuestion) o;
 	        return correctOption == that.correctOption &&
 	                Objects.equals(question, that.question) &&
 	                Objects.equals(options, that.options);
